@@ -11,8 +11,10 @@ RSpec.describe 'Landing Page' do
         expect(page).to have_content('IONO')
       end
 
-      it 'I see a button "Where to Eat"' do
+      it 'I see a button "Where to Eat" that redirects me to the results page' do
         expect(page).to have_button('Where to Eat')
+        click_button 'Where to Eat'
+        expect(current_path).to eq(results_path)
       end
 
       it 'I see text that says "Much like your palate, would you like to refine your search?"' do
