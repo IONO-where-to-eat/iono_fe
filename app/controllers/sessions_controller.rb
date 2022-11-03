@@ -1,12 +1,10 @@
 class SessionsController < ApplicationController
   def create
     user = BackendService.register_user(user_params)
-    # user = User.find_or_create_by(email: user_params[:email])
-    # user.update(user_params)
-    # binding.pry
-    session[:user_id] = user[:data][:google_id]
-
-    redirect_to dashboard_path(user)
+    user_id = user[:data][:attributes][:google_id]
+    session[:user_id] = user_id
+    session[:email] = user[:data][:attributes][:email]
+    redirect_to dashboard_path(user_id)
   end
 
 private
