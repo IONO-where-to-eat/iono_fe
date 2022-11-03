@@ -23,8 +23,6 @@ RSpec.describe 'Landing Page' do
 
       it 'I see a button to login with Google that redirects me to the search page' do
         expect(page).to have_button('Login with Google')
-        click_button 'Login with Google'
-        expect(current_path).to eq(dashboard_path)
       end
     end
   end

@@ -1,7 +1,10 @@
 class SessionsController < ApplicationController
   def create
     user = BackendService.register_user(user_params)
-    session[:user_id] = user.id
+    # user = User.find_or_create_by(email: user_params[:email])
+    # user.update(user_params)
+    # binding.pry
+    session[:user_id] = user[:data][:google_id]
 
     redirect_to dashboard_path(user)
   end
@@ -9,7 +12,7 @@ class SessionsController < ApplicationController
 private
 
   def auth_hash
-    auth_hash = request.env['omniauth.auth']
+    request.env['omniauth.auth']
   end
 
   def user_params
