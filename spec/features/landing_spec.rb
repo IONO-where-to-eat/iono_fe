@@ -21,7 +21,7 @@ RSpec.describe 'Landing Page' do
         expect(page).to have_content('Much like your palate, would you like to refine your search?')
       end
 
-      it 'I see a button to login with Google' do
+      it 'I see a button to login with Google that redirects me to the search page' do
         expect(page).to have_button('Login with Google')
       end
     end

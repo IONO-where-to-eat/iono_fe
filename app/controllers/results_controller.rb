@@ -1,4 +1,3 @@
 class ResultsController < ApplicationController
-  def index
-  end
+  def index; end
 end
