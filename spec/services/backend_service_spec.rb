@@ -45,5 +45,17 @@ RSpec.describe 'Backend Service Testing' do
       expect(restaurant).to have_key (:distance)
       expect(restaurant[:distance]).to be_a Float
     end
+
+    it 'can get_restaurants with a single filter' do
+      filter_params = {}
+      restaurants = BackendService.get_restaurants(filter_params)
+
+    end
+
+    it 'can get_restaurants with multiple filters' do
+      filter_params = {}
+      restaurants = BackendService.get_restaurants(filter_params)
+
+    end
   end
 end
