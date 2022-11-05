@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Results Page' do
-  describe 'as a visitor', :vcr do
+  describe 'as a visitor' do
     let!(:restaurant1) { build(:restaurant) }
     let!(:restaurant2) { build(:restaurant) }
     let!(:restaurant3) { build(:restaurant) }
