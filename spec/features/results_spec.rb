@@ -40,9 +40,7 @@ RSpec.describe 'Results Page' do
 
       href = "#{restaurant1.url}"
       page.should have_selector "a[href='#{href}']", text: "#{restaurant1.name}"
-      # click_on "#{restaurant1.name}"
 
-    #   expect(current_path).to eq(restaurant1.url)
     end
 
     it 'has a link to return to landing page' do
