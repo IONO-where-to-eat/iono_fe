@@ -1,6 +1,6 @@
 <%= link_to 'Home', root_path %>
-<% @restaurants.first(3).each_with_index do |restaurant, index|%>
-  <div id="restaurant_<%= index + 1 %>">
+  <div id="restaurant">
+    <% restaurant = @restaurants.first %>
     <%= image_tag(restaurant.image_url, id: "image_#{restaurant.id}") %>
     <h3><%=link_to restaurant.name, restaurant.url %></h3>
     <%if restaurant.is_closed == false%>
@@ -17,6 +17,5 @@
     <p>Phone: <%= restaurant.display_phone %></p>
     <p>Distance: <%= restaurant.distance %> miles</p>
   </div>
-<% end %>
 
-<%= button_to 'Shuffle',  %>
+<%= button_to 'Shuffle', results_shuffle_path(@restaurants), method: :get  %>

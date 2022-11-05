@@ -8,21 +8,22 @@ RSpec.describe 'Results Page' do
     let!(:restaurant4) { build(:restaurant) }
     let!(:restaurant5) { build(:restaurant) }
     let!(:restaurant6) { build(:restaurant) }
+    let!(:restaurant7) { build(:restaurant) }
 
     before :each do
-      allow(RestaurantsFacade).to receive(:restaurants).and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6])
+      allow(RestaurantsFacade).to receive(:restaurants).and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
       visit root_path
       click_button 'Where to Eat'
       expect(current_path).to eq(results_path)
     end
 
-    it 'displays three restaurants with descriptions' do
+    it 'displays one restaurant with description' do
       expect(page).to have_content(restaurant1.name)
-      expect(page).to have_content(restaurant2.name)
-      expect(page).to have_content(restaurant3.name)
+      expect(page).to_not have_content(restaurant2.name)
+      expect(page).to_not have_content(restaurant3.name)
       expect(page).to_not have_content(restaurant4.name)
 
-      within('#restaurant_1') do
+      within('#restaurant') do
         expect(page).to have_content(restaurant1.name)
         expect(page).to have_content(restaurant1.display_phone)
         expect(page).to have_content(restaurant1.distance)
@@ -34,8 +35,8 @@ RSpec.describe 'Results Page' do
 
     it 'returns restaurants with links to respective yelp show page' do
       expect(page).to have_link(restaurant1.name)
-      expect(page).to have_link(restaurant2.name)
-      expect(page).to have_link(restaurant3.name)
+      expect(page).to_not have_link(restaurant2.name)
+      expect(page).to_not have_link(restaurant3.name)
       expect(page).to_not have_link(restaurant4.name)
 
       href = "#{restaurant1.url}"
@@ -49,9 +50,25 @@ RSpec.describe 'Results Page' do
       expect(current_path).to eq(root_path)
     end
 
-    xit 'has button that shuffles restaurant options' do
+    it 'has button that shuffles restaurant options' do
+      expect(page).to have_content(restaurant1.name)
       expect(page).to have_button('Shuffle')
       click_button 'Shuffle'
+      expect(current_path).to eq(results_path)
+      expect(page).to have_content(restaurant2.name)
+      expect(page).to_not have_content(restaurant4.name)
+      expect(page).to_not have_content(restaurant5.name)
+      expect(page).to_not have_content(restaurant6.name)
+      expect(page).to_not have_content(restaurant1.name)
+      expect(page).to_not have_content(restaurant7.name)
+      click_button 'Shuffle'
+      expect(page).to have_content(restaurant3.name)
+      expect(page).to_not have_content(restaurant4.name)
+      expect(page).to_not have_content(restaurant2.name)
+      expect(page).to_not have_content(restaurant5.name)
+      expect(page).to_not have_content(restaurant6.name)
+      expect(page).to_not have_content(restaurant1.name)
+      expect(page).to_not have_content(restaurant7.name)
     end
   end
 end
