@@ -16,7 +16,8 @@ RSpec.describe 'Results Page' do
         end
 
         it 'has button that shuffles restaurant options' do
-            @restaurant_1 = 
+            # create_list(:restaurant, 6)
+            save_and_open_page
             expect(page).to have_button("Shuffle")
             click_button "Shuffle"
 

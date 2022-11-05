@@ -1,0 +1,7 @@
+<% @restaurants.each_with_index do |r,i|%>
+  <div id="restuarant_<% i + 1 %>">
+    <%= r.name%>
+    <%= r.location %>
+    <br>
+  </div>
+<% end %>
