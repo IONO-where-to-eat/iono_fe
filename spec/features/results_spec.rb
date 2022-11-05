@@ -53,6 +53,5 @@ RSpec.describe 'Results Page' do
       expect(page).to have_button('Shuffle')
       click_button 'Shuffle'
     end
-
-  end 
+  end
 end
