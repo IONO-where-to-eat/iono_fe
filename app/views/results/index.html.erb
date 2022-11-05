@@ -1,0 +1,21 @@
+<%= link_to 'Home', root_path %>
+  <div id="restaurant">
+    <% restaurant = @restaurants.first %>
+    <%= image_tag(restaurant.image_url, id: "image_#{restaurant.id}") %>
+    <h3><%=link_to restaurant.name, restaurant.url %></h3>
+    <%if restaurant.is_closed == false%>
+      <p>Open Now</p>
+    <% else %>
+      <p>Closed</p>
+    <% end %>
+    <p>Address: <%= restaurant.location.to_sentence %></p>
+    <p>Rating: <%= restaurant.rating %> out of 5</p>
+    <p>Number of Reviews: <%= restaurant.review_count %></p>
+    <p>Categories: <%= restaurant.categories.to_sentence %></p>
+    <p>Offers <%= restaurant.transactions.to_sentence %></p>
+    <p>Address: <%= restaurant.location.first %> <%= restaurant.location.second %></p>
+    <p>Phone: <%= restaurant.display_phone %></p>
+    <p>Distance: <%= restaurant.distance %> miles</p>
+  </div>
+
+<%= button_to 'Shuffle', results_shuffle_path(@restaurants), method: :get  %>

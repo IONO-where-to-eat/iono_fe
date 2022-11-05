@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :user do
-    email { "MyString" }
-    token { "MyString" }
-    google_id { "MyString" }
+    email { Faker::Omniauth.google[:info][:email] }
+    token { Faker::Omniauth.google[:credentials][:token] }
+    google_id { Faker::Omniauth.google[:uid] }
   end
 end
