@@ -4,6 +4,6 @@ class RestaurantsFacade
     restaurant_objects = restaurants[:businesses].map do |restaurant|
       Restaurant.new(restaurant)
     end
-    # restaurant_objects.shuffle
+    restaurant_objects.shuffle
   end
 end
