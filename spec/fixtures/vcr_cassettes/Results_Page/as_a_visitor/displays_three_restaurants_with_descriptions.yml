@@ -1,0 +1,136 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/restaurants
+    body:
+      encoding: UTF-8
+      string: 'null'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"befb1dba866f51cba719e9cc12f4f30a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 457b7631-921a-45aa-9f41-90d4d5edb675
+      X-Runtime:
+      - '0.851058'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"businesses":[{"id":"dnJvyhSPiIVlmpdM_3SCrg","alias":"snooze-an-a-m-eatery-denver-12","name":"Snooze,
+        an A.M. Eatery","image_url":"https://s3-media4.fl.yelpcdn.com/bphoto/cniSi66T4iS6nqCdML6HUQ/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/snooze-an-a-m-eatery-denver-12?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":4794,"categories":[{"alias":"breakfast_brunch","title":"Breakfast
+        \u0026 Brunch"},{"alias":"cocktailbars","title":"Cocktail Bars"},{"alias":"tradamerican","title":"American
+        (Traditional)"}],"rating":4.5,"coordinates":{"latitude":39.75544,"longitude":-104.98883},"transactions":["delivery"],"price":"$$","location":{"address1":"2262
+        Larimer St","address2":"","address3":"","city":"Denver","zip_code":"80205","country":"US","state":"CO","display_address":["2262
+        Larimer St","Denver, CO 80205"]},"phone":"+13032970700","display_phone":"(303)
+        297-0700","distance":1839.4484424332475},{"id":"CQNv4SXqFltcwNsx-qHbLQ","alias":"steubens-uptown-denver","name":"Steuben''s
+        Uptown","image_url":"https://s3-media2.fl.yelpcdn.com/bphoto/KR5Wy_fMXkSXyTkLVMWmig/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/steubens-uptown-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":3103,"categories":[{"alias":"diners","title":"Diners"},{"alias":"breakfast_brunch","title":"Breakfast
+        \u0026 Brunch"},{"alias":"cocktailbars","title":"Cocktail Bars"}],"rating":4.0,"coordinates":{"latitude":39.74349,"longitude":-104.98017},"transactions":["delivery","pickup"],"price":"$$","location":{"address1":"523
+        E 17th Ave","address2":null,"address3":"","city":"Denver","zip_code":"80203","country":"US","state":"CO","display_address":["523
+        E 17th Ave","Denver, CO 80203"]},"phone":"+13038301001","display_phone":"(303)
+        830-1001","distance":618.9215919833026},{"id":"IvPkDs4T8mEH7XzFxMuVGQ","alias":"city-o-city-denver","name":"City
+        O'' City","image_url":"https://s3-media2.fl.yelpcdn.com/bphoto/9n1ILBsJNhVfwajYeUVTIQ/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/city-o-city-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":2484,"categories":[{"alias":"breakfast_brunch","title":"Breakfast
+        \u0026 Brunch"},{"alias":"vegan","title":"Vegan"},{"alias":"tradamerican","title":"American
+        (Traditional)"}],"rating":4.0,"coordinates":{"latitude":39.7367226482267,"longitude":-104.984684393258},"transactions":["delivery"],"price":"$$","location":{"address1":"206
+        E 13th Ave","address2":"","address3":"","city":"Denver","zip_code":"80203","country":"US","state":"CO","display_address":["206
+        E 13th Ave","Denver, CO 80203"]},"phone":"+13038316443","display_phone":"(303)
+        831-6443","distance":270.02492580466867},{"id":"EjNI-dNAMrYxKgUIkqeqhg","alias":"guard-and-grace-denver","name":"Guard
+        and Grace","image_url":"https://s3-media1.fl.yelpcdn.com/bphoto/yu3vfsM6s_LpSvEBed75Mw/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/guard-and-grace-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1475,"categories":[{"alias":"steak","title":"Steakhouses"},{"alias":"wine_bars","title":"Wine
+        Bars"},{"alias":"seafood","title":"Seafood"}],"rating":4.5,"coordinates":{"latitude":39.7476811908831,"longitude":-104.989654496312},"transactions":["delivery","pickup"],"price":"$$$","location":{"address1":"1801
+        California St","address2":"","address3":"","city":"Denver","zip_code":"80202","country":"US","state":"CO","display_address":["1801
+        California St","Denver, CO 80202"]},"phone":"+13032938500","display_phone":"(303)
+        293-8500","distance":1038.6996740900363},{"id":"ywFvkNZVJoXUQbZoq7fr1w","alias":"rioja-denver","name":"Rioja","image_url":"https://s3-media3.fl.yelpcdn.com/bphoto/lUl5MQmamMtenen2S9IR2Q/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/rioja-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":2561,"categories":[{"alias":"newamerican","title":"American
+        (New)"},{"alias":"spanish","title":"Spanish"},{"alias":"bars","title":"Bars"}],"rating":4.5,"coordinates":{"latitude":39.7478083125095,"longitude":-104.999331349925},"transactions":["delivery","pickup"],"price":"$$$","location":{"address1":"1431
+        Larimer St","address2":"","address3":"","city":"Denver","zip_code":"80202","country":"US","state":"CO","display_address":["1431
+        Larimer St","Denver, CO 80202"]},"phone":"+13038202282","display_phone":"(303)
+        820-2282","distance":1596.848837793917},{"id":"5R0BZNk2MuGd8fzDcp_DVQ","alias":"watercourse-foods-denver","name":"WaterCourse
+        Foods","image_url":"https://s3-media4.fl.yelpcdn.com/bphoto/yWLZa79N7rsZWH80DkeE8g/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/watercourse-foods-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":2339,"categories":[{"alias":"vegetarian","title":"Vegetarian"},{"alias":"vegan","title":"Vegan"},{"alias":"comfortfood","title":"Comfort
+        Food"}],"rating":4.0,"coordinates":{"latitude":39.743566,"longitude":-104.976669},"transactions":["delivery"],"price":"$$","location":{"address1":"837
+        E 17th Ave","address2":"","address3":"","city":"Denver","zip_code":"80218","country":"US","state":"CO","display_address":["837
+        E 17th Ave","Denver, CO 80218"]},"phone":"+13038327313","display_phone":"(303)
+        832-7313","distance":844.3207016285197},{"id":"3ncWfQJg_RbTqnkPmksoAA","alias":"sams-no-3-downtown-denver","name":"Sam''s
+        No 3 - Downtown","image_url":"https://s3-media1.fl.yelpcdn.com/bphoto/slPJBqg4pmG5j_1lW8hQ8w/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/sams-no-3-downtown-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":2513,"categories":[{"alias":"breakfast_brunch","title":"Breakfast
+        \u0026 Brunch"},{"alias":"tradamerican","title":"American (Traditional)"}],"rating":4.0,"coordinates":{"latitude":39.7462,"longitude":-104.99559},"transactions":["delivery"],"price":"$$","location":{"address1":"1500
+        Curtis St","address2":null,"address3":"","city":"Denver","zip_code":"80202","country":"US","state":"CO","display_address":["1500
+        Curtis St","Denver, CO 80202"]},"phone":"+13035341927","display_phone":"(303)
+        534-1927","distance":1216.2088548156403},{"id":"uAsOPByhA_JiDi1d8K7cjw","alias":"5280-burger-bar-denver-denver","name":"5280
+        Burger Bar - Denver","image_url":"https://s3-media3.fl.yelpcdn.com/bphoto/31ImH5RyzEXUAI0BOLTxtA/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/5280-burger-bar-denver-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1810,"categories":[{"alias":"burgers","title":"Burgers"},{"alias":"tradamerican","title":"American
+        (Traditional)"},{"alias":"sportsbars","title":"Sports Bars"}],"rating":4.0,"coordinates":{"latitude":39.74388,"longitude":-104.99082},"transactions":["delivery","pickup"],"price":"$$","location":{"address1":"500
+        16th St","address2":"Ste 160","address3":"","city":"Denver","zip_code":"80202","country":"US","state":"CO","display_address":["500
+        16th St","Ste 160","Denver, CO 80202"]},"phone":"+13038251020","display_phone":"(303)
+        825-1020","distance":750.0737833238918},{"id":"5G2X2q9p7QFdm-LbyutltQ","alias":"jelly-denver-3","name":"Jelly","image_url":"https://s3-media2.fl.yelpcdn.com/bphoto/7nyoidNTHWZk9DIUlkxvgQ/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/jelly-denver-3?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1864,"categories":[{"alias":"newamerican","title":"American
+        (New)"},{"alias":"breakfast_brunch","title":"Breakfast \u0026 Brunch"},{"alias":"coffee","title":"Coffee
+        \u0026 Tea"}],"rating":4.0,"coordinates":{"latitude":39.7367338,"longitude":-104.9796458},"transactions":["delivery","pickup"],"price":"$$","location":{"address1":"600
+        E 13th Ave","address2":"","address3":"","city":"Denver","zip_code":"80203","country":"US","state":"CO","display_address":["600
+        E 13th Ave","Denver, CO 80203"]},"phone":"+13038316301","display_phone":"(303)
+        831-6301","distance":509.15240114548396},{"id":"i8VF3q7dTszCcigJSMcJzQ","alias":"angelo-s-taverna-denver","name":"Angelo’s
+        Taverna","image_url":"https://s3-media3.fl.yelpcdn.com/bphoto/5mZqdS9LJatQR0JgqYfnwQ/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/angelo-s-taverna-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1458,"categories":[{"alias":"italian","title":"Italian"},{"alias":"seafood","title":"Seafood"},{"alias":"bars","title":"Bars"}],"rating":4.5,"coordinates":{"latitude":39.725523,"longitude":-104.979224},"transactions":["delivery","restaurant_reservation","pickup"],"price":"$$","location":{"address1":"620
+        E 6th Ave","address2":"","address3":"","city":"Denver","zip_code":"80203","country":"US","state":"CO","display_address":["620
+        E 6th Ave","Denver, CO 80203"]},"phone":"+13037443366","display_phone":"(303)
+        744-3366","distance":1586.1421238754886},{"id":"WTe8uL6vF1ZuKAeJIvxR8w","alias":"la-loma-denver-denver","name":"La
+        Loma | Denver","image_url":"https://s3-media2.fl.yelpcdn.com/bphoto/kzFxlhl2tvEf492T9uH3Vg/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/la-loma-denver-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1738,"categories":[{"alias":"mexican","title":"Mexican"},{"alias":"tex-mex","title":"Tex-Mex"}],"rating":4.0,"coordinates":{"latitude":39.74493,"longitude":-104.98781},"transactions":["delivery","pickup"],"price":"$$","location":{"address1":"1801
+        Broadway","address2":"Unit 116","address3":"","city":"Denver","zip_code":"80202","country":"US","state":"CO","display_address":["1801
+        Broadway","Unit 116","Denver, CO 80202"]},"phone":"+13034338300","display_phone":"(303)
+        433-8300","distance":694.1977000562081},{"id":"svJWwW0ilssyqk_UML0mUg","alias":"work-and-class-denver","name":"Work
+        \u0026 Class","image_url":"https://s3-media1.fl.yelpcdn.com/bphoto/CsEm4HlzDoXK_n3ZWcxv8g/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/work-and-class-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1647,"categories":[{"alias":"newamerican","title":"American
+        (New)"},{"alias":"latin","title":"Latin American"},{"alias":"cocktailbars","title":"Cocktail
+        Bars"}],"rating":4.5,"coordinates":{"latitude":39.75761,"longitude":-104.98604},"transactions":["delivery"],"price":"$$","location":{"address1":"2500
+        Larimer St","address2":"Ste 101","address3":"","city":"Denver","zip_code":"80205","country":"US","state":"CO","display_address":["2500
+        Larimer St","Ste 101","Denver, CO 80205"]},"phone":"+13032920700","display_phone":"(303)
+        292-0700","distance":2060.91015314686},{"id":"pnY1m8aBusUCqgD1rUcLyw","alias":"panzano-denver","name":"Panzano","image_url":"https://s3-media4.fl.yelpcdn.com/bphoto/gMNw4UWOhWpOni2CL0jnSg/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/panzano-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1131,"categories":[{"alias":"italian","title":"Italian"},{"alias":"bars","title":"Bars"},{"alias":"breakfast_brunch","title":"Breakfast
+        \u0026 Brunch"}],"rating":4.5,"coordinates":{"latitude":39.747833,"longitude":-104.992822},"transactions":["delivery","pickup"],"price":"$$$","location":{"address1":"909
+        17th St","address2":"","address3":"","city":"Denver","zip_code":"80202","country":"US","state":"CO","display_address":["909
+        17th St","Denver, CO 80202"]},"phone":"+13032963525","display_phone":"(303)
+        296-3525","distance":1189.0528330583925},{"id":"RoaIS3cE1wDtzuZ5XrRgjw","alias":"biker-jims-gourmet-dogs-denver-9","name":"Biker
+        Jim''s Gourmet Dogs","image_url":"https://s3-media2.fl.yelpcdn.com/bphoto/WAYOU68EkS55JaXGMmU_Eg/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/biker-jims-gourmet-dogs-denver-9?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1398,"categories":[{"alias":"hotdog","title":"Hot
+        Dogs"}],"rating":4.5,"coordinates":{"latitude":39.754394,"longitude":-104.990215},"transactions":["delivery","pickup"],"price":"$","location":{"address1":"2148
+        Larimer St","address2":"","address3":null,"city":"Denver","zip_code":"80205","country":"US","state":"CO","display_address":["2148
+        Larimer St","Denver, CO 80205"]},"phone":"+17207469355","display_phone":"(720)
+        746-9355","distance":1759.232904171276},{"id":"6fJltLxQcLgO0owitrzlBQ","alias":"cuba-cuba-cafe-and-bar-denver-3","name":"Cuba
+        Cuba Cafe \u0026 Bar","image_url":"https://s3-media2.fl.yelpcdn.com/bphoto/WLqHTIEuiddjC9V0nwp7HA/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/cuba-cuba-cafe-and-bar-denver-3?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":832,"categories":[{"alias":"cuban","title":"Cuban"}],"rating":4.5,"coordinates":{"latitude":39.7350845336914,"longitude":-104.993179321289},"transactions":["pickup"],"price":"$$","location":{"address1":"1173
+        Delaware St","address2":"","address3":"","city":"Denver","zip_code":"80204","country":"US","state":"CO","display_address":["1173
+        Delaware St","Denver, CO 80204"]},"phone":"+13036052822","display_phone":"(303)
+        605-2822","distance":859.4743432339964},{"id":"gagUrh3806qc5hZ14F0Odw","alias":"denver-biscuit-company-denver-20","name":"Denver
+        Biscuit Company","image_url":"https://s3-media1.fl.yelpcdn.com/bphoto/bxPN9shgJEtwvT3Hrf_pCg/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/denver-biscuit-company-denver-20?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":4404,"categories":[{"alias":"sandwiches","title":"Sandwiches"},{"alias":"breakfast_brunch","title":"Breakfast
+        \u0026 Brunch"}],"rating":4.5,"coordinates":{"latitude":39.740384,"longitude":-104.949098},"transactions":["delivery","pickup"],"price":"$$","location":{"address1":"3237
+        E Colfax Ave","address2":"","address3":null,"city":"Denver","zip_code":"80206","country":"US","state":"CO","display_address":["3237
+        E Colfax Ave","Denver, CO 80206"]},"phone":"+13033777900","display_phone":"(303)
+        377-7900","distance":3047.4579268097473},{"id":"jx5kzkP_9zwh9BW0WVPAWw","alias":"osteria-marco-denver","name":"Osteria
+        Marco","image_url":"https://s3-media2.fl.yelpcdn.com/bphoto/GLYUlpXSy6DDGWOmxcPejA/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/osteria-marco-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1723,"categories":[{"alias":"italian","title":"Italian"},{"alias":"pizza","title":"Pizza"},{"alias":"bars","title":"Bars"}],"rating":4.0,"coordinates":{"latitude":39.74819,"longitude":-104.99897},"transactions":["delivery","pickup"],"price":"$$$","location":{"address1":"1453
+        Larimer St","address2":"","address3":"","city":"Denver","zip_code":"80202","country":"US","state":"CO","display_address":["1453
+        Larimer St","Denver, CO 80202"]},"phone":"+13035345855","display_phone":"(303)
+        534-5855","distance":1588.8267392514156},{"id":"jVOAZe9L3Kwx9Ze-UhT3_w","alias":"odyssey-italian-restaurant-denver","name":"Odyssey
+        Italian Restaurant","image_url":"https://s3-media1.fl.yelpcdn.com/bphoto/X5Mh_wJK5CVcEvLeF8UsRQ/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/odyssey-italian-restaurant-denver?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1171,"categories":[{"alias":"sicilian","title":"Sicilian"},{"alias":"seafood","title":"Seafood"},{"alias":"pastashops","title":"Pasta
+        Shops"}],"rating":4.5,"coordinates":{"latitude":39.7257806690032,"longitude":-104.979706093254},"transactions":["delivery","pickup"],"price":"$$","location":{"address1":"603
+        E 6th Ave","address2":"","address3":"","city":"Denver","zip_code":"80203","country":"US","state":"CO","display_address":["603
+        E 6th Ave","Denver, CO 80203"]},"phone":"+13033180102","display_phone":"(303)
+        318-0102","distance":1546.9004961359476},{"id":"OgVfMvYT-omfqwOwLP2V5w","alias":"d-bar-denver-denver-3","name":"D
+        Bar Denver","image_url":"https://s3-media1.fl.yelpcdn.com/bphoto/oRQNA5-tNCY8889dNVJGFA/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/d-bar-denver-denver-3?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":1052,"categories":[{"alias":"desserts","title":"Desserts"},{"alias":"tradamerican","title":"American
+        (Traditional)"},{"alias":"breakfast_brunch","title":"Breakfast \u0026 Brunch"}],"rating":4.0,"coordinates":{"latitude":39.7461693,"longitude":-104.9811474},"transactions":["delivery","pickup"],"price":"$$","location":{"address1":"494
+        E 19th Ave","address2":"","address3":"","city":"Denver","zip_code":"80203","country":"US","state":"CO","display_address":["494
+        E 19th Ave","Denver, CO 80203"]},"phone":"+13038614710","display_phone":"(303)
+        861-4710","distance":837.5225171817342},{"id":"FcyalVpVWzOHCYJnQDTLPw","alias":"leven-deli-denver-8","name":"Leven
+        Deli","image_url":"https://s3-media4.fl.yelpcdn.com/bphoto/b0jahbl40vNN0x5JOx0k3Q/o.jpg","is_closed":false,"url":"https://www.yelp.com/biz/leven-deli-denver-8?adjust_creative=HXaFGsDa_NpgBlPglTMuTA\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_search\u0026utm_source=HXaFGsDa_NpgBlPglTMuTA","review_count":363,"categories":[{"alias":"delis","title":"Delis"},{"alias":"sandwiches","title":"Sandwiches"},{"alias":"wine_bars","title":"Wine
+        Bars"}],"rating":4.5,"coordinates":{"latitude":39.73547386,"longitude":-104.98984114},"transactions":["delivery","pickup"],"price":"$$","location":{"address1":"123
+        W 12th Ave","address2":"","address3":null,"city":"Denver","zip_code":"80204","country":"US","state":"CO","display_address":["123
+        W 12th Ave","Denver, CO 80204"]},"phone":"+13033255691","display_phone":"(303)
+        325-5691","distance":600.1689348203871}],"total":2500,"region":{"center":{"longitude":-104.98470306396484,"latitude":39.73915100097656}}}'
+  recorded_at: Sat, 05 Nov 2022 16:33:10 GMT
+recorded_with: VCR 6.1.0

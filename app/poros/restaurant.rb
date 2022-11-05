@@ -6,14 +6,14 @@ class Restaurant
     @name = data[:name]
     @image_url = data[:image_url]
     @is_closed = data[:is_closed]
-    @url = data[:url]  
+    @url = data[:url]
     @review_count = data[:review_count]
-    @categories = data[:categories]
+    @categories = data[:categories].map { |category| category[:title] }
     @rating = data[:rating]
     @transactions = data[:transactions]
     @price = data[:price]
     @location = data[:location][:display_address]
     @display_phone = data[:display_phone]
-    @distance = data[:distance]
+    @distance = (data[:distance] / 1609).round(2)
   end
 end

@@ -71,3 +71,15 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+VCR.configure do |config|
+  config.before_record do |i|
+    i.response.body.force_encoding('UTF-8')
+  end
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  config.filter_sensitive_data('<API Key>') { ENV['GOOGLE_CLIENT_SECRET'] } #name_api_key from config/application.yml
+  config.configure_rspec_metadata!
+  config.default_cassette_options = { re_record_interval: 30.days }
+  config.allow_http_connections_when_no_cassette = true
+end
