@@ -12,7 +12,7 @@ class Restaurant
     @rating = data[:rating]
     @transactions = data[:transactions]
     @price = data[:price]
-    @location = data[:location]
+    @location = data[:location][:display_address]
     @display_phone = data[:display_phone]
     @distance = data[:distance]
   end

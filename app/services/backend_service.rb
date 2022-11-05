@@ -13,6 +13,7 @@ class BackendService
     response = conn.get('/api/v1/restaurants') do |req|
       req.body = search_params.to_json
     end
+    parse(response)
   end
 
   private
