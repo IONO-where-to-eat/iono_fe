@@ -1,5 +1,7 @@
-<%= button_to 'Where to Eat', results_path, method: :get %>
+<div class="jumbotron">
+<%= button_to 'Where to Eat', results_path, method: :get, :class => "btn btn-primary" %>
 
 
 <p>Much like your palate, would you like to refine your search?</p>
-<%= button_to 'Login with Google', '/auth/google_oauth2', method: :get %>
+  <%= button_to 'Login with Google', '/auth/google_oauth2', method: :get, :class => "btn btn-primary" %>
+</div>

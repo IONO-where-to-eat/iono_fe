@@ -1,16 +1,21 @@
-<%= @user_email %>
-<br>
-<br>
+<div class="nav-bar">
+  <%= link_to 'Logout', logout_path, :class => "btn btn-sm" %>
+</div>
+<div class="jumbotron">
+  <%= @user_email %>
+  <br>
+  <br>
 
-<%= form_with url: results_path, method: :get, local: true do |f| %>
-  <%= f.label :radius, 'Proximity in miles' %>
-  <%= f.select :radius, ['1', '5', '10', '20'], :include_blank => true %><br>
+  <%= form_with url: results_path, method: :get, local: true do |f| %>
+    <%= f.label :radius, 'Proximity in miles' %>
+    <%= f.select :radius, ['1', '5', '10', '20'], :include_blank => true %><br>
 
-  <%= f.label :price, 'Price' %>
-  <%= f.range_field :price, :min=>1, :max=>5 %><br>
+    <%= f.label :price, 'Price' %>
+    <%= f.range_field :price, :min=>1, :max=>5 %><br>
 
-  <%= f.label :open_now, 'Open Now?' %>
-  <%= f.check_box :open_now, {}, true, false %><br>
+    <%= f.label :open_now, 'Open Now?' %>
+    <%= f.check_box :open_now, {}, true, false %><br>
 
-  <%= f.submit "Find Me Food" %>
-<% end %>
+    <%= f.submit "Find Me Food", :class => "btn btn-primary" %>
+  <% end %>
+</div>
