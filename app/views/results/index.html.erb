@@ -1,7 +1,16 @@
-<%= link_to 'Home', root_path %>
-  <div id="restaurant">
+<div class="nav-bar">
+  <% if session[:user_id] %>
+    <%= link_to 'Logout', logout_path, :class => "btn btn-sm" %>
+  <% else %>
+    <%= link_to 'Home', root_path, :class => "btn btn-sm" %>
+  <% end %>
+  <%= button_to 'Shuffle', results_shuffle_path(@restaurants), method: :get, :class => "btn btn-primary"  %>
+</div>
+
+<div class="jumbotron">
+  <span id="restaurant">
     <% restaurant = @restaurants.first %>
-    <%= image_tag(restaurant.image_url, id: "image_#{restaurant.id}") %>
+    <%= image_tag(restaurant.image_url, id: "image_#{restaurant.id}", class: "img")%>
     <h3><%=link_to restaurant.name, restaurant.url %></h3>
     <%if restaurant.is_closed == false%>
       <p>Open Now</p>
@@ -17,6 +26,5 @@
     <p>Address: <%= restaurant.location.first %> <%= restaurant.location.second %></p>
     <p>Phone: <%= restaurant.display_phone %></p>
     <p>Distance: <%= restaurant.distance %> miles</p>
-  </div>
-
-<%= button_to 'Shuffle', results_shuffle_path(@restaurants), method: :get  %>
+  </span>
+</div>

@@ -10,6 +10,45 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
  */
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+ @import "bootstrap";
+
+ .navbar {
+  margin-bottom: 0;
+  background: $black;
+}
+
+ body {
+  background: $black;
+  color: $white;
+  font-family: 'Merriweather', sans-serif;
+}
+
+ .jumbotron {
+  background: #6f42c1;
+  color: $white;
+  text-align: center;
+  p {
+          color: $white;
+          font-size: 26px;
+  }
+}
+
+.img,
+.video,
+.audio {
+        margin-top: 20px;
+        max-width: 80%;
+}
+
+.btn-primary {
+  color: $white;
+  border-color: $white;
+  margin-bottom: 5px;
+}
+.btn-sm {
+  background-color: $white;
+  display: inline-block;
+}
