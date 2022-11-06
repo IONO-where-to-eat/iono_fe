@@ -14,6 +14,6 @@ class ResultsController < ApplicationController
   end
 
   def restaurants
-    @restaurants ||= RestaurantsFacade.restaurants
+    @restaurants ||= RestaurantsFacade.restaurants(filter_params = nil)
   end
 end

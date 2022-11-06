@@ -45,17 +45,33 @@ RSpec.describe 'Backend Service Testing' do
       expect(restaurant).to have_key (:distance)
       expect(restaurant[:distance]).to be_a Float
     end
+  end
 
-    it 'can get_restaurants with a single filter' do
-      filter_params = {}
+    it 'can get_restaurants with a single filter', :vcr do
+      filter_params = {:radius=>nil, :open_now=>true, :price=>nil}
       restaurants = BackendService.get_restaurants(filter_params)
 
+      expect(restaurants[:businesses]).to be_an Array
+
+      restaurants[:businesses].each do |restaurant|
+        expect(restaurant).to have_key(:is_closed)
+        expect(restaurant[:is_closed]).to eq(false)
+        expect(restaurant[:is_closed]).to_not eq(true)
+      end
     end
 
-    it 'can get_restaurants with multiple filters' do
-      filter_params = {}
+    it 'can get_restaurants with multiple filters', :vcr do
+      filter_params = {:radius=>1, :open_now=>true, :price=>3}
       restaurants = BackendService.get_restaurants(filter_params)
+      expect(restaurants[:businesses]).to be_an Array
 
-    end
+      restaurants[:businesses].each do |restaurant|
+        expect(restaurant).to have_key(:distance)
+        expect(restaurant[:distance]).to be <= 2400
+        expect(restaurant).to have_key(:is_closed)
+        expect(restaurant[:is_closed]).to be(false)
+        expect(restaurant).to have_key(:price)
+        expect(restaurant[:price]).to eq('$$$')
+      end
   end
 end

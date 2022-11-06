@@ -10,9 +10,7 @@ class BackendService
   end
 
   def self.get_restaurants(filter_params = nil)
-    response = conn.get('/api/v1/restaurants') do |req|
-      req.body = filter_params.to_json
-    end
+    response = conn.get('/api/v1/restaurants', params = filter_params)
     parse(response)
   end
 
