@@ -4,27 +4,42 @@
   <% else %>
     <%= link_to 'Home', root_path, :class => "btn btn-sm" %>
   <% end %>
-  <%= button_to 'Shuffle', results_shuffle_path(@restaurants), method: :get, :class => "btn btn-primary"  %>
 </div>
-
-<div class="jumbotron">
-  <span id="restaurant">
-    <% restaurant = @restaurants.first %>
-    <%= image_tag(restaurant.image_url, id: "image_#{restaurant.id}", class: "img")%>
-    <h3><%=link_to restaurant.name, restaurant.url %></h3>
-    <%if restaurant.is_closed == false%>
-      <p>Open Now</p>
-    <% else %>
-      <p>Closed</p>
-    <% end %>
-    <p>Address: <%= restaurant.location.to_sentence %></p>
-    <p>Price: <%= restaurant.price %></p>
-    <p>Rating: <%= restaurant.rating %> out of 5</p>
-    <p>Number of Reviews: <%= restaurant.review_count %></p>
-    <p>Categories: <%= restaurant.categories.to_sentence %></p>
-    <p>Offers <%= restaurant.transactions.to_sentence %></p>
-    <p>Address: <%= restaurant.location.first %> <%= restaurant.location.second %></p>
-    <p>Phone: <%= restaurant.display_phone %></p>
-    <p>Distance: <%= restaurant.distance %> miles</p>
-  </span>
-</div>
+<% restaurant = @restaurants.first %>
+    <div class="container px-4 px-lg-5">
+        <div class="content-section-heading text-center">
+            <h3 class="text-secondary mb-0">IONO</h3>
+            <h2 class="mb-5"><%=link_to restaurant.name, restaurant.url %></h2>
+        </div>
+        <div class="row gx-0">
+            <div class="col-lg-6">
+                <a class="portfolio-item" href="#!">
+                    <img class="img-fluid" src=<%= restaurant.image_url %> alt="..." />
+                </a>
+            </div>
+            <div class="col-lg-6">
+              <div class="container px-4 px-lg-5 text-left">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                  <div class="col-lg-10">
+                      <h2><%if restaurant.is_closed == false%>
+                            <p>Open Now</p>
+                          <% else %>
+                            <p>Closed</p>
+                          <% end %></h2>
+                        <p class="lead mb-5">          
+                            <div><b>Address:</b> <%= restaurant.location.to_sentence %></div>
+                            <div><b>Price:</b> <%= restaurant.price %></div>
+                            <div><b>Rating:</b> <%= restaurant.rating %> out of 5</div>
+                            <div><b>Number of Reviews:</b> <%= restaurant.review_count %></div>
+                            <div><b>Categories:</b> <%= restaurant.categories.to_sentence %></div>
+                            <div><b>Offers:</b> <%= restaurant.transactions.to_sentence %></div>
+                            <div><b>Phone:</b> <%= restaurant.display_phone %></div>
+                            <div><b>Distance:</b> <%= restaurant.distance %> miles<div>
+                            </p>
+                            <%= button_to 'Shuffle', results_shuffle_path(@restaurants), method: :get, :class => "btn btn-dark btn-xl"  %>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -2,11 +2,12 @@
   <%= link_to 'Logout', logout_path, :class => "btn btn-sm" %>
 </div>
 <div class="jumbotron">
-  <%= @user_email %>
+  <center>Welcome, <%= @user_email %>!</center>
+  <center>Optional filters to refine your palate:</center>
   <br>
   <br>
 
-  <%= form_with url: results_path, method: :get, local: true do |f| %>
+  <center><%= form_with url: results_path, method: :get, local: true do |f| %>
     <%= f.label :radius, 'Proximity in miles' %>
     <%= f.select :radius, ['1', '5', '10', '20'], :include_blank => true %><br>
 
@@ -18,4 +19,5 @@
 
     <%= f.submit "Find Me Food", :class => "btn btn-primary" %>
   <% end %>
+  </center>
 </div>
