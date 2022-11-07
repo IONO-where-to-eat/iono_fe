@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>IonoFe</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +11,23 @@
   </head>
 
   <body>
-    <h1 align="center">IONO</h1>
     <%= yield %>
   </body>
+
+  <footer class="footer text-center">
+            <div class="container px-4 px-lg-5">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                    </li>
+                </ul>
+                <p class="text-muted small mb-0">Copyright &copy; Your Website 2022</p>
+            </div>
+        </footer>
 </html>
