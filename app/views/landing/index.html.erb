@@ -1,7 +1,10 @@
-<div class="jumbotron">
-<%= button_to 'Where to Eat', results_path, method: :get, :class => "btn btn-primary" %>
+<header class="masthead d-flex align-items-center">
+  <div class="container px-4 px-lg-5 text-center">
+    <h1 class="mb-1">IONO</h1>
+    <%= button_to 'Where to Eat', results_path, method: :get, :class => "btn btn-primary btn-xl" %><br><br><br>
+    <h4 class="mb-5"><em>Much like your palate, would you like to refine your search?</em></h4>
+    <%= button_to 'Login with Google', '/auth/google_oauth2', method: :get, :class => "btn btn-primary btn-l" %>
+  </div>
+</header>
 
 
-<p>Much like your palate, would you like to refine your search?</p>
-  <%= button_to 'Login with Google', '/auth/google_oauth2', method: :get, :class => "btn btn-primary" %>
-</div>
