@@ -23,14 +23,13 @@ RSpec.describe 'Results Page' do
       expect(page).to_not have_content(restaurant3.name)
       expect(page).to_not have_content(restaurant4.name)
 
-      
+
       expect(page).to have_content(restaurant1.name)
       expect(page).to have_content(restaurant1.display_phone)
       expect(page).to have_content(restaurant1.distance)
       expect(page).to have_content(restaurant1.rating)
       expect(page).to have_content(restaurant1.review_count)
       expect(page).to have_content(restaurant1.transactions.to_sentence)
-     
     end
 
     it 'returns restaurants with links to respective yelp show page' do
@@ -41,7 +40,6 @@ RSpec.describe 'Results Page' do
 
       href = "#{restaurant1.url}"
       page.should have_selector "a[href='#{href}']", text: "#{restaurant1.name}"
-
     end
 
     it 'has a link to return to landing page' do
@@ -69,6 +67,51 @@ RSpec.describe 'Results Page' do
       expect(page).to_not have_content(restaurant6.name)
       expect(page).to_not have_content(restaurant1.name)
       expect(page).to_not have_content(restaurant7.name)
+    end
+  end
+
+  describe 'as a User' do
+    let!(:restaurant1) { build(:restaurant) }
+    let!(:restaurant2) { build(:restaurant) }
+    let!(:restaurant3) { build(:restaurant) }
+    let!(:restaurant4) { build(:restaurant) }
+    let!(:restaurant5) { build(:restaurant) }
+    let!(:restaurant6) { build(:restaurant) }
+    let!(:restaurant7) { build(:restaurant) }
+
+    before :each do
+      visit root_path
+
+      OmniAuth.config.test_mode = true
+      OmniAuth.config.silence_get_warning = true
+      OmniAuth.config.mock_auth[:google_oauth2] =
+      OmniAuth::AuthHash.new(
+        {
+          :provider => 'google',
+          :uid => '123545',
+          :info => {
+            :email => 'email@gmail.com',
+            :first_name => 'Smudger'
+          },
+          :credentials => {
+            :token => '222'
+          }
+        }
+      )
+      allow(RestaurantsFacade).to receive(:restaurants).and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
+      click_on 'Login with Google'
+      click_on 'Find Me Food'
+    end
+
+    it 'directs from /search' do
+      expect(current_path).to eq(results_path)
+    end
+
+    it 'logs out a user' do
+      expect(page).to have_link('Logout')
+      expect(page).to_not have_link('Home')
+      click_on 'Logout'
+      expect(current_path).to eq(root_path)
     end
   end
 end
