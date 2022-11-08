@@ -17,7 +17,11 @@ class BackendService
   private
 
   def self.conn
-    Faraday.new(url: 'http://localhost:5000', headers: { 'Content-Type' => 'application/json' })
+    if Rails.env.production?
+      Faraday.new(url: 'Heroku', headers: { 'Content-Type' => 'application/json' })
+    else
+      Faraday.new(url: 'http://localhost:5000', headers: { 'Content-Type' => 'application/json' })
+    end
   end
 
   def self.parse(response)
