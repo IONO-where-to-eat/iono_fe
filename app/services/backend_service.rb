@@ -1,5 +1,5 @@
-require "faraday"
-require "json"
+# require "faraday"
+# require "json"
 
 class BackendService
   def self.register_user(user_params)
