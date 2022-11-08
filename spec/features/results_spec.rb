@@ -23,7 +23,6 @@ RSpec.describe 'Results Page' do
       expect(page).to_not have_content(restaurant3.name)
       expect(page).to_not have_content(restaurant4.name)
 
-
       expect(page).to have_content(restaurant1.name)
       expect(page).to have_content(restaurant1.display_phone)
       expect(page).to have_content(restaurant1.distance)
@@ -68,6 +67,16 @@ RSpec.describe 'Results Page' do
       expect(page).to_not have_content(restaurant1.name)
       expect(page).to_not have_content(restaurant7.name)
     end
+
+    describe 'sad path for visitor' do
+      it 'sad path for no restaurants returned' do
+        allow(RestaurantsFacade).to receive(:restaurants).and_return([])
+        visit root_path
+        click_button 'Where to Eat'
+        expect(page).to have_content('No restaurants found. Please login to refine your search.')
+        expect(current_path).to eq(root_path)
+      end
+    end
   end
 
   describe 'as a User' do
@@ -98,20 +107,36 @@ RSpec.describe 'Results Page' do
           }
         }
       )
-      allow(RestaurantsFacade).to receive(:restaurants).and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
       click_on 'Login with Google'
-      click_on 'Find Me Food'
     end
 
     it 'directs from /search' do
+      allow(RestaurantsFacade).to receive(:restaurants).and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
+      click_on 'Find Me Food'
       expect(current_path).to eq(results_path)
     end
 
     it 'logs out a user' do
+      allow(RestaurantsFacade).to receive(:restaurants).and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
+      click_on 'Find Me Food'
       expect(page).to have_link('Logout')
       expect(page).to_not have_link('Home')
       click_on 'Logout'
       expect(current_path).to eq(root_path)
+    end
+
+    it 'sad paths back to user filters if no restaurants are returned' do
+      allow(RestaurantsFacade).to receive(:restaurants).and_return([])
+      # select '1', from: :radius
+      # # set_range :price, with: '4'
+      # find_field(:price).set 6
+      # find(:xpath, "//input[@id='price']").set 4
+      # check :open_now
+      click_on 'Find Me Food'
+
+      expect(page).to have_content('No restaurants match your filters. Please refine your search.')
+      # binding.pry
+      expect(current_path).to eq(dashboard_path('123545'))
     end
   end
 end
