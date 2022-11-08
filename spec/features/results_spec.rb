@@ -23,14 +23,14 @@ RSpec.describe 'Results Page' do
       expect(page).to_not have_content(restaurant3.name)
       expect(page).to_not have_content(restaurant4.name)
 
-      within('#restaurant') do
-        expect(page).to have_content(restaurant1.name)
-        expect(page).to have_content(restaurant1.display_phone)
-        expect(page).to have_content(restaurant1.distance)
-        expect(page).to have_content(restaurant1.rating)
-        expect(page).to have_content(restaurant1.review_count)
-        expect(page).to have_content(restaurant1.transactions.to_sentence)
-      end
+      
+      expect(page).to have_content(restaurant1.name)
+      expect(page).to have_content(restaurant1.display_phone)
+      expect(page).to have_content(restaurant1.distance)
+      expect(page).to have_content(restaurant1.rating)
+      expect(page).to have_content(restaurant1.review_count)
+      expect(page).to have_content(restaurant1.transactions.to_sentence)
+     
     end
 
     it 'returns restaurants with links to respective yelp show page' do

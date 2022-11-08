@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Backend Service Testing' do
   it 'register_user' do
-    user_params = ( create(:user) )
+    user_params = { email: Faker::Omniauth.google[:info][:email], token: Faker::Omniauth.google[:credentials][:token], google_id: Faker::Omniauth.google[:uid] }
     user = BackendService.register_user(user_params)
-
+    
     expect(user).to be_a Hash
     expect(user[:data][:attributes]).to have_key(:google_id)
     expect(user[:data][:attributes][:google_id]).to be_a String
@@ -36,8 +36,6 @@ RSpec.describe 'Backend Service Testing' do
       expect(restaurant[:rating]).to be_a Float
       expect(restaurant).to have_key(:transactions)
       expect(restaurant[:transactions]).to be_an Array
-      expect(restaurant).to have_key(:price)
-      expect(restaurant[:price]).to be_a String
       expect(restaurant).to have_key(:location)
       expect(restaurant[:location][:display_address]).to be_an Array
       expect(restaurant).to have_key(:display_phone)
