@@ -250,17 +250,17 @@ Visit site [IONO](https://iono-where-to-eat.herokuapp.com/) or on [local](http:/
 
 Click 'Where to Eat'
 
-<img src="documentation/landing_page.png" alt="Landing" width="300" height="300">
+<img src="documentation/landing_page.png" alt="Landing" width="300">
 
 View the randomized restaurant selection
 
-<img src="documentation/results_visitor.png" alt="Visitor Results" width="300" height="300">
+<img src="documentation/results_visitor.png" alt="Visitor Results" width="300">
 
 Click Shuffle
 
 View the next restaurant in the randomized list
 
-<img src="documentation/shuffle_visitor.png" alt="Visitor Shuffle" width="300" height="300">
+<img src="documentation/shuffle_visitor.png" alt="Visitor Shuffle" width="300">
 
 Click Home link
 
@@ -270,21 +270,21 @@ Fill in filters as desired
 
 Click Find Me Food
 
-<img src="documentation/dashboard.png" alt="Dashboard" width="300" height="300">
+<img src="documentation/dashboard.png" alt="Dashboard" width="300">
 
 View the randomized restaurant selection
 
-<img src="documentation/results_user.png" alt="User Results" width="300" height="300">
+<img src="documentation/results_user.png" alt="User Results" width="300">
 
 Click Shuffle
 
 View the next restaurant in the randomized list
 
-<img src="documentation/shuffle_user.png" alt="User Shuffle" width="300" height="300">
+<img src="documentation/shuffle_user.png" alt="User Shuffle" width="300">
 
 Click Logout link
 
-<img src="documentation/landing_page.png" alt="Landing" width="300" height="300">
+<img src="documentation/landing_page.png" alt="Landing" width="300">
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
