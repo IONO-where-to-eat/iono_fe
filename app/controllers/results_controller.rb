@@ -18,12 +18,7 @@ class ResultsController < ApplicationController
   end
 
   def session_restaurants
-    filter_params = {
-      radius: params[:radius],
-      open_now: params[:open_now],
-      price: params[:price],
-      transactions: params[:transactions]
-    }
+    session[:filter_params] = filter_params
     return_restaurants = restaurants(filter_params)
     if return_restaurants.empty?
       flash[:error] = 'No restaurants match your filters. Please refine your search.'
@@ -35,10 +30,19 @@ class ResultsController < ApplicationController
 
   def shuffle
     restaurants.shift
-    redirect_to results_path
+    redirect_to results_path(session[:filter_params])
   end
 
   def restaurants(filter_params = nil)
     RestaurantsFacade.restaurants(filter_params)
+  end
+
+  def filter_params
+    {
+      radius: params[:radius],
+      open_now: params[:open_now],
+      price: params[:price],
+      transactions: params[:transactions]
+    }
   end
 end
