@@ -11,7 +11,8 @@ RSpec.describe 'Results Page' do
     let!(:restaurant7) { build(:restaurant) }
 
     before :each do
-      allow(RestaurantsFacade).to receive(:restaurants).and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
+      allow(RestaurantsFacade).to receive(:restaurants)
+        .and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
       visit root_path
       click_button 'Where to Eat'
       expect(current_path).to eq(results_path)
@@ -37,8 +38,8 @@ RSpec.describe 'Results Page' do
       expect(page).to_not have_link(restaurant3.name)
       expect(page).to_not have_link(restaurant4.name)
 
-      href = "#{restaurant1.url}"
-      page.should have_selector "a[href='#{href}']", text: "#{restaurant1.name}"
+      href = restaurant1.url.to_s
+      page.should have_selector "a[href='#{href}']", text: restaurant1.name.to_s
     end
 
     it 'has a link to return to landing page' do
@@ -94,30 +95,32 @@ RSpec.describe 'Results Page' do
       OmniAuth.config.test_mode = true
       OmniAuth.config.silence_get_warning = true
       OmniAuth.config.mock_auth[:google_oauth2] =
-      OmniAuth::AuthHash.new(
-        {
-          :provider => 'google',
-          :uid => '123545',
-          :info => {
-            :email => 'email@gmail.com',
-            :first_name => 'Smudger'
-          },
-          :credentials => {
-            :token => '222'
+        OmniAuth::AuthHash.new(
+          {
+            provider: 'google',
+            uid: '123545',
+            info: {
+              email: 'email@gmail.com',
+              first_name: 'Smudger'
+            },
+            credentials: {
+              token: '222'
+            }
           }
-        }
-      )
+        )
       click_on 'Login with Google'
     end
 
     it 'directs from /search' do
-      allow(RestaurantsFacade).to receive(:restaurants).and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
+      allow(RestaurantsFacade).to receive(:restaurants)
+        .and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
       click_on 'Find Me Food'
       expect(current_path).to eq(results_path)
     end
 
     it 'logs out a user' do
-      allow(RestaurantsFacade).to receive(:restaurants).and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
+      allow(RestaurantsFacade).to receive(:restaurants)
+        .and_return([restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7])
       click_on 'Find Me Food'
       expect(page).to have_link('Logout')
       expect(page).to_not have_link('Home')
@@ -127,15 +130,10 @@ RSpec.describe 'Results Page' do
 
     it 'sad paths back to user filters if no restaurants are returned' do
       allow(RestaurantsFacade).to receive(:restaurants).and_return([])
-      # select '1', from: :radius
-      # # set_range :price, with: '4'
-      # find_field(:price).set 6
-      # find(:xpath, "//input[@id='price']").set 4
-      # check :open_now
+
       click_on 'Find Me Food'
 
       expect(page).to have_content('No restaurants match your filters. Please refine your search.')
-      # binding.pry
       expect(current_path).to eq(dashboard_path('123545'))
     end
   end

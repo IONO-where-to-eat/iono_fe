@@ -7,7 +7,7 @@ class RestaurantsFacade
       end
       restaurant_objects.shuffle
     else
-      restaurant_objects = []
+      []
     end
   end
 end

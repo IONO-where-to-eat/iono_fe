@@ -4,7 +4,7 @@ RSpec.describe 'Backend Service Testing' do
   it 'register_user' do
     user_params = { email: Faker::Omniauth.google[:info][:email], token: Faker::Omniauth.google[:credentials][:token], google_id: Faker::Omniauth.google[:uid] }
     user = BackendService.register_user(user_params)
-    
+
     expect(user).to be_a Hash
     expect(user[:data][:attributes]).to have_key(:google_id)
     expect(user[:data][:attributes][:google_id]).to be_a String
@@ -45,31 +45,32 @@ RSpec.describe 'Backend Service Testing' do
     end
   end
 
-    it 'can get_restaurants with a single filter', :vcr do
-      filter_params = {:radius=>nil, :open_now=>true, :price=>nil}
-      restaurants = BackendService.get_restaurants(filter_params)
+  it 'can get_restaurants with a single filter', :vcr do
+    filter_params = {:radius=>nil, :open_now=>true, :price=>nil}
+    restaurants = BackendService.get_restaurants(filter_params)
 
-      expect(restaurants[:businesses]).to be_an Array
+    expect(restaurants[:businesses]).to be_an Array
 
-      restaurants[:businesses].each do |restaurant|
-        expect(restaurant).to have_key(:is_closed)
-        expect(restaurant[:is_closed]).to eq(false)
-        expect(restaurant[:is_closed]).to_not eq(true)
-      end
+    restaurants[:businesses].each do |restaurant|
+      expect(restaurant).to have_key(:is_closed)
+      expect(restaurant[:is_closed]).to eq(false)
+      expect(restaurant[:is_closed]).to_not eq(true)
     end
+  end
 
-    it 'can get_restaurants with multiple filters', :vcr do
-      filter_params = {:radius=>1, :open_now=>true, :price=>3}
-      restaurants = BackendService.get_restaurants(filter_params)
-      expect(restaurants[:businesses]).to be_an Array
+  it 'can get_restaurants with multiple filters', :vcr do
+    filter_params = {:radius=>1, :open_now=>true, :price=>3}
+    restaurants = BackendService.get_restaurants(filter_params)
 
-      restaurants[:businesses].each do |restaurant|
-        expect(restaurant).to have_key(:distance)
-        expect(restaurant[:distance]).to be <= 2400
-        expect(restaurant).to have_key(:is_closed)
-        expect(restaurant[:is_closed]).to be(false)
-        expect(restaurant).to have_key(:price)
-        expect(restaurant[:price]).to eq('$$$')
-      end
+    expect(restaurants[:businesses]).to be_an Array
+
+    restaurants[:businesses].each do |restaurant|
+      expect(restaurant).to have_key(:distance)
+      expect(restaurant[:distance]).to be <= 2400
+      expect(restaurant).to have_key(:is_closed)
+      expect(restaurant[:is_closed]).to be(false)
+      expect(restaurant).to have_key(:price)
+      expect(restaurant[:price]).to eq('$$$')
+    end
   end
 end
