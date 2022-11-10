@@ -1,4 +1,4 @@
-class Restaurant 
+class Restaurant
   attr_reader :id, :name, :image_url, :is_closed, :url, :review_count, :categories, :rating, :transactions, :price, :location, :display_phone, :distance
 
   def initialize(data)

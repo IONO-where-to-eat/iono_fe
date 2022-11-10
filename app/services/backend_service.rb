@@ -13,8 +13,6 @@ class BackendService
     end
   end
 
-  private
-
   def self.conn
     if Rails.env.production?
       Faraday.new(url: 'https://boiling-lake-88809.herokuapp.com', headers: { 'Content-Type' => 'application/json' })
@@ -26,4 +24,6 @@ class BackendService
   def self.parse(response)
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  private_class_method :conn, :parse
 end
