@@ -7,10 +7,8 @@ class BackendService
   end
 
   def self.get_restaurants(filter_params = nil)
-    Rails.cache.fetch('restaurant-search', expires_in: 5.minutes) do
-      response = conn.get('/api/v1/restaurants', params = filter_params)
-      parse(response)
-    end
+    response = conn.get('/api/v1/restaurants', params = filter_params)
+    parse(response)
   end
 
   def self.conn
