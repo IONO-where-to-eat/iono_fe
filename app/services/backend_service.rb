@@ -1,6 +1,3 @@
-# require "faraday"
-# require "json"
-
 class BackendService
   def self.register_user(user_params)
     response = conn.post('/api/v1/users') do |req|
@@ -10,7 +7,7 @@ class BackendService
   end
 
   def self.get_restaurants(filter_params = nil)
-    Rails.cache.fetch('restaurant-search', expires_in: 15.minutes) do
+    Rails.cache.fetch('restaurant-search', expires_in: 5.minutes) do
       response = conn.get('/api/v1/restaurants', params = filter_params)
       parse(response)
     end
